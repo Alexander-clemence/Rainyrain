@@ -1,10 +1,15 @@
 package io.github.anthonyeef.rainyrain;
 
+import android.app.FragmentManager;
 import android.os.Bundle;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.support.v7.widget.Toolbar;
+import android.widget.Adapter;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -18,6 +23,12 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         final android.support.v7.app.ActionBar ab = getSupportActionBar();
+        /*TO DO*/
+
+        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+        if (viewPager != null) {
+            setupViewPager(viewPager);
+        }
     }
 
     @Override
@@ -26,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -41,4 +54,6 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
